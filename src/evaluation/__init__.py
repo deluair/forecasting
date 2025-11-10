@@ -15,6 +15,18 @@ from .metrics import (
     MetricSuite
 )
 
+try:
+    from .statistical_tests import (
+        DieboldMarianoTest,
+        LjungBoxTest,
+        AugmentedDickeyFullerTest,
+        JarqueBeraTest,
+        ForecastValidation
+    )
+    STATISTICAL_TESTS_AVAILABLE = True
+except ImportError:
+    STATISTICAL_TESTS_AVAILABLE = False
+
 __all__ = [
     'BaseMetric',
     'BrierScore',
@@ -27,3 +39,12 @@ __all__ = [
     'CRPS',
     'MetricSuite',
 ]
+
+if STATISTICAL_TESTS_AVAILABLE:
+    __all__.extend([
+        'DieboldMarianoTest',
+        'LjungBoxTest',
+        'AugmentedDickeyFullerTest',
+        'JarqueBeraTest',
+        'ForecastValidation'
+    ])
