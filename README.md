@@ -368,10 +368,11 @@ point, lower, upper = UncertaintyQuantifier.conformal_prediction(
 
 ## 📚 Documentation
 
-- [Quick Start Guide](QUICKSTART.md)
+- [Quick Start Guide](docs/QUICKSTART.md)
 - [API Documentation](docs/API.md)
 - [Theoretical Background](docs/THEORY.md)
 - [Academic References](docs/REFERENCES.md)
+- [Contributing Guidelines](docs/CONTRIBUTING.md)
 - [Examples](examples/)
 
 ## 🧪 Testing
@@ -416,7 +417,7 @@ See [docs/REFERENCES.md](docs/REFERENCES.md) for complete bibliography.
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Contributions are welcome! Please see [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines.
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
