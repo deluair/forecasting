@@ -1,9 +1,15 @@
 """
-Main package initialization.
+Advanced Forecasting Framework for Prediction Competitions.
+
+A comprehensive, production-ready forecasting framework designed for prediction
+competitions like Metaculus and GJ Open. Provides advanced forecasting models,
+evaluation metrics, calibration tools, and visualization capabilities.
 """
 
 __version__ = "0.1.0"
-__author__ = "Forecasting Team"
+__author__ = "deluair"
+__license__ = "MIT"
+__email__ = "deluair@users.noreply.github.com"
 
 from .core import BaseForecaster, ForecastData, ForecastResult
 from .models import (
