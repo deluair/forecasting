@@ -1,0 +1,69 @@
+# Configuration file for forecasting project
+
+# Data paths
+data:
+  raw_data_path: "data/raw"
+  processed_data_path: "data/processed"
+  competition_data_path: "data/competitions"
+
+# Model configurations
+models:
+  arima:
+    auto: true
+    max_p: 5
+    max_d: 2
+    max_q: 5
+    seasonal: false
+  
+  prophet:
+    yearly_seasonality: true
+    weekly_seasonality: true
+    daily_seasonality: false
+    seasonality_mode: "additive"
+  
+  ml:
+    model_type: "random_forest"
+    n_lags: 10
+    n_estimators: 100
+    max_depth: 10
+  
+  ensemble:
+    method: "weighted_average"
+    weights: "learned"
+    optimization_method: "inverse_variance"
+
+# Evaluation settings
+evaluation:
+  metrics:
+    - "BrierScore"
+    - "LogScore"
+    - "MAE"
+    - "RMSE"
+    - "CalibrationScore"
+  
+  calibration:
+    n_bins: 10
+    method: "isotonic"  # or "platt"
+
+# Visualization settings
+visualization:
+  style: "seaborn"
+  figsize: [12, 6]
+  dpi: 150
+  save_format: "png"
+
+# Competition settings
+competitions:
+  metaculus:
+    api_key: null  # Set in local config
+    data_format: "csv"
+  
+  gj_open:
+    api_key: null  # Set in local config
+    data_format: "csv"
+
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/forecasting.log"
+
