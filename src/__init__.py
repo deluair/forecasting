@@ -36,8 +36,24 @@ from .evaluation import (
     CRPS,
     MetricSuite
 )
-from .visualization import ForecastPlotter, ForecastReport
-from .utils import CalibrationTool, UncertaintyQuantifier, FeatureEngineering
+
+# Optional imports with graceful degradation
+try:
+    from .visualization import ForecastPlotter, ForecastReport
+    _VISUALIZATION_AVAILABLE = True
+except ImportError:
+    _VISUALIZATION_AVAILABLE = False
+    ForecastPlotter = None
+    ForecastReport = None
+
+try:
+    from .utils import CalibrationTool, UncertaintyQuantifier, FeatureEngineering
+    _UTILS_AVAILABLE = True
+except ImportError:
+    _UTILS_AVAILABLE = False
+    CalibrationTool = None
+    UncertaintyQuantifier = None
+    FeatureEngineering = None
 
 __all__ = [
     # Core
